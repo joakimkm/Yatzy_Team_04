@@ -147,6 +147,24 @@
   <ItemGroup>
     <None Include="Resources\dice_06.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_06_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_05_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_04_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_03_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_02_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice_01_hover.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

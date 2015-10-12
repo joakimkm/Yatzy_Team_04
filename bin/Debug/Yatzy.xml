@@ -27,7 +27,17 @@ Yatzy
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Yatzy.My.Resources.Resources.dice_01_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Yatzy.My.Resources.Resources.dice_02">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yatzy.My.Resources.Resources.dice_02_hover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -37,7 +47,17 @@ Yatzy
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Yatzy.My.Resources.Resources.dice_03_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Yatzy.My.Resources.Resources.dice_04">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yatzy.My.Resources.Resources.dice_04_hover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -47,7 +67,17 @@ Yatzy
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Yatzy.My.Resources.Resources.dice_05_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Yatzy.My.Resources.Resources.dice_06">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yatzy.My.Resources.Resources.dice_06_hover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

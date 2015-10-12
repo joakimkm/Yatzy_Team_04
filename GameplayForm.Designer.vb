@@ -72,6 +72,7 @@ Partial Class GameplayForm
         Me.Dice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Dice5.TabIndex = 4
         Me.Dice5.TabStop = False
+        Me.Dice5.Tag = "1"
         '
         'Dice4
         '
@@ -83,6 +84,7 @@ Partial Class GameplayForm
         Me.Dice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Dice4.TabIndex = 3
         Me.Dice4.TabStop = False
+        Me.Dice4.Tag = "1"
         '
         'Dice3
         '
@@ -94,6 +96,7 @@ Partial Class GameplayForm
         Me.Dice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Dice3.TabIndex = 2
         Me.Dice3.TabStop = False
+        Me.Dice3.Tag = "1"
         '
         'Dice2
         '
@@ -105,6 +108,7 @@ Partial Class GameplayForm
         Me.Dice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Dice2.TabIndex = 1
         Me.Dice2.TabStop = False
+        Me.Dice2.Tag = "1"
         '
         'Dice1
         '
@@ -117,6 +121,7 @@ Partial Class GameplayForm
         Me.Dice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Dice1.TabIndex = 0
         Me.Dice1.TabStop = False
+        Me.Dice1.Tag = "1"
         '
         'GameplayForm
         '

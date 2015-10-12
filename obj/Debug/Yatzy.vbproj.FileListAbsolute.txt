@@ -14,3 +14,11 @@ C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\bin\Debug\Yatzy.exe.config
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.exe
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.xml
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.pdb
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\bin\Debug\Yatzy.exe
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\bin\Debug\Yatzy.pdb
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\bin\Debug\Yatzy.xml
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.vbprojResolveAssemblyReference.cache
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.GameplayForm.resources
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.Form1.resources
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.Resources.resources
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.vbproj.GenerateResource.Cache
