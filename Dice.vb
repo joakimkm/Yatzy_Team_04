@@ -24,8 +24,8 @@
     End Property
 
     ' Function for changing image when mouse enter or leave dice
-    Public Sub ChangeColor(ByVal change As Boolean)
-        If change = True Then
+    Public Sub ChangeColor(ByVal shouldChange As Boolean)
+        If shouldChange = False Then
             'All dice images in resources are named dice_01, dice_02, dice_03...
             graphic.Image = My.Resources.ResourceManager.GetObject("dice_0" & value)
         Else
@@ -37,8 +37,10 @@
     ' Function for rolling dices
     Public Sub Roll()
         If isHold = False Then
+            ' Initialize the random-number generator.
+            Randomize()
             ' Gives random value to dice
-            value = CInt(Int((5 * Rnd()) + 1))
+            value = CInt(Int((6 * Rnd()) + 1))
             ' Graphic is updated when new value is made. TODO: Add statement if value == value than do not update graphic. 
             UpdateGraphic()
         End If

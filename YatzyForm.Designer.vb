@@ -32,6 +32,8 @@ Partial Class YatzyForm
         Me.Dice2 = New System.Windows.Forms.PictureBox()
         Me.Dice1 = New System.Windows.Forms.PictureBox()
         Me.DiceBox = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.rollsLeft = New System.Windows.Forms.Label()
         CType(Me.Dice6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +66,7 @@ Partial Class YatzyForm
         '
         'RollBtn
         '
-        Me.RollBtn.Location = New System.Drawing.Point(6, 368)
+        Me.RollBtn.Location = New System.Drawing.Point(6, 395)
         Me.RollBtn.Name = "RollBtn"
         Me.RollBtn.Size = New System.Drawing.Size(75, 23)
         Me.RollBtn.TabIndex = 5
@@ -134,6 +136,8 @@ Partial Class YatzyForm
         '
         'DiceBox
         '
+        Me.DiceBox.Controls.Add(Me.Label1)
+        Me.DiceBox.Controls.Add(Me.rollsLeft)
         Me.DiceBox.Controls.Add(Me.Dice6)
         Me.DiceBox.Controls.Add(Me.RollBtn)
         Me.DiceBox.Controls.Add(Me.Dice5)
@@ -143,15 +147,33 @@ Partial Class YatzyForm
         Me.DiceBox.Controls.Add(Me.Dice1)
         Me.DiceBox.Location = New System.Drawing.Point(408, 60)
         Me.DiceBox.Name = "DiceBox"
-        Me.DiceBox.Size = New System.Drawing.Size(90, 408)
+        Me.DiceBox.Size = New System.Drawing.Size(90, 434)
         Me.DiceBox.TabIndex = 5
         Me.DiceBox.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(25, 376)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "roll(s) left!"
+        '
+        'rollsLeft
+        '
+        Me.rollsLeft.AutoSize = True
+        Me.rollsLeft.Location = New System.Drawing.Point(15, 376)
+        Me.rollsLeft.Name = "rollsLeft"
+        Me.rollsLeft.Size = New System.Drawing.Size(13, 13)
+        Me.rollsLeft.TabIndex = 7
+        Me.rollsLeft.Text = "3"
         '
         'YatzyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(550, 603)
+        Me.ClientSize = New System.Drawing.Size(550, 611)
         Me.Controls.Add(Me.DiceBox)
         Me.Controls.Add(Me.NewGame)
         Me.Name = "YatzyForm"
@@ -163,6 +185,7 @@ Partial Class YatzyForm
         CType(Me.Dice2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dice1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DiceBox.ResumeLayout(False)
+        Me.DiceBox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -175,4 +198,6 @@ Partial Class YatzyForm
     Friend WithEvents Dice2 As PictureBox
     Friend WithEvents Dice1 As PictureBox
     Friend WithEvents DiceBox As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents rollsLeft As Label
 End Class
