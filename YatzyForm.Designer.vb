@@ -34,6 +34,7 @@ Partial Class YatzyForm
         Me.DiceBox = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rollsLeft = New System.Windows.Forms.Label()
+        Me.submitBtn = New System.Windows.Forms.Button()
         CType(Me.Dice6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,7 +148,7 @@ Partial Class YatzyForm
         Me.DiceBox.Controls.Add(Me.Dice1)
         Me.DiceBox.Location = New System.Drawing.Point(408, 60)
         Me.DiceBox.Name = "DiceBox"
-        Me.DiceBox.Size = New System.Drawing.Size(90, 434)
+        Me.DiceBox.Size = New System.Drawing.Size(90, 433)
         Me.DiceBox.TabIndex = 5
         Me.DiceBox.TabStop = False
         '
@@ -169,11 +170,24 @@ Partial Class YatzyForm
         Me.rollsLeft.TabIndex = 7
         Me.rollsLeft.Text = "3"
         '
+        'submitBtn
+        '
+        Me.submitBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.submitBtn.Enabled = False
+        Me.submitBtn.Location = New System.Drawing.Point(414, 511)
+        Me.submitBtn.Name = "submitBtn"
+        Me.submitBtn.Size = New System.Drawing.Size(75, 23)
+        Me.submitBtn.TabIndex = 6
+        Me.submitBtn.Text = "Submit"
+        Me.submitBtn.UseVisualStyleBackColor = False
+        Me.submitBtn.Visible = False
+        '
         'YatzyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(550, 611)
+        Me.Controls.Add(Me.submitBtn)
         Me.Controls.Add(Me.DiceBox)
         Me.Controls.Add(Me.NewGame)
         Me.Name = "YatzyForm"
@@ -200,4 +214,5 @@ Partial Class YatzyForm
     Friend WithEvents DiceBox As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents rollsLeft As Label
+    Friend WithEvents submitBtn As Button
 End Class

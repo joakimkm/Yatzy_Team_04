@@ -112,9 +112,9 @@
 
     Public Sub upDatePlayersScore(ByVal currentPlayer As Integer, ByVal playersScore As Integer(,))
 
-        Dim firstDimensionLength As Integer = ((playersScore.Length) / 2) - 1
+        Dim length As Integer = playersScore.GetLength(0) - 1
         'Console.WriteLine("ss" & firstDimensionLength)
-        For r As Integer = 0 To firstDimensionLength
+        For r As Integer = 0 To length
             If playersScore(r, 0) > 0 Then
                 labels(currentPlayer, r).Text = playersScore(r, 0)
                 'playersScore(r, 1) = 1 means stroked
@@ -125,5 +125,6 @@
 
         Next
     End Sub
+
 
 End Class

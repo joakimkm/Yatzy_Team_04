@@ -10,6 +10,7 @@ Public Class Player
     Public leftForBonusCalc As Integer
     ' Bonus points are continuelsy added to this
     Public bonusPoints As Integer
+
     ' Constructor for player class
     Public Sub New(ByVal name As String, ByVal isComputer As Boolean, ByVal scoreBoard As Integer(,))
         Me.name = name
@@ -18,6 +19,15 @@ Public Class Player
         leftForBonusCalc = 6
     End Sub
 
+    Public Function getTotalScore()
+        Dim totalSum As Integer
+        Dim length As Integer = scoreBoard.GetLength(0) - 1
+        For r As Integer = 7 To length
+            totalSum += playersScore(r, 0)
+        Next r
+
+        Return totalSum
+    End Function
 
     ' Function to test if its possible to set new score value
     Public Function isScoreValid(ByVal scoreIndex As Integer)
@@ -45,7 +55,6 @@ Public Class Player
             leftForBonusCalc -= 1
         End If
 
-        Console.WriteLine(leftForBonusCalc)
 
     End Sub
 
@@ -71,6 +80,13 @@ Public Class Player
         Get
             ' Gets the property value.
             Return scoreBoard
+        End Get
+    End Property
+
+    Public ReadOnly Property getName() As String
+        Get
+            ' Gets the property value.
+            Return name
         End Get
     End Property
 

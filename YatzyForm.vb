@@ -37,10 +37,16 @@ Public Class YatzyForm
         End If
         'Scoreboard controls are made in seperate file and we need to call for objects.
         scoreControll = New ScoreBoardControll(isMaxi)
-        'We also adds ScoreBoardControll events to this class. See ScoreBoardControll class for more reading.
-        AddHandler scoreControll.MouseEnterLabel, AddressOf MouseEnterLabel
-        AddHandler scoreControll.MouseLeaveLabel, AddressOf MouseLeaveLabel
-        AddHandler scoreControll.MouseClickLabel, AddressOf MouseClickLabel
+
+        If Not isForced Then
+            'If not forced we adds ScoreBoardControll events to this class. See ScoreBoardControll class for more reading.
+            AddHandler scoreControll.MouseEnterLabel, AddressOf MouseEnterLabel
+            AddHandler scoreControll.MouseLeaveLabel, AddressOf MouseLeaveLabel
+            AddHandler scoreControll.MouseClickLabel, AddressOf MouseClickLabel
+        Else
+            submitBtn.Visible = True
+        End If
+
         'Add Scoreboard object to YatzyForm.
         Controls.Add(scoreControll)
         'Change position for scoreboard to x = 10 and y = 60
@@ -86,6 +92,10 @@ Public Class YatzyForm
 
         If rollsLeftInt = 0 Then
             RollBtn.Enabled = False
+        End If
+
+        If gameObj.isGameForced Then
+            submitBtn.Enabled = True
         End If
 
     End Sub
@@ -152,6 +162,12 @@ Public Class YatzyForm
             If gameObj.checkScore(tagName, tablePos.Row) Then
                 nextTurn()
             End If
+
+            If gameObj.isGameFinishedValue Then
+                rollsLeft.Text = 0
+                RollBtn.Enabled = False
+            End If
+
         End If
 
     End Sub
@@ -164,4 +180,8 @@ Public Class YatzyForm
 
     End Sub
 
+    Private Sub submitBtn_Click(sender As Object, e As EventArgs) Handles submitBtn.Click
+        gameObj.forcedChoose()
+        submitBtn.Enabled = False
+    End Sub
 End Class

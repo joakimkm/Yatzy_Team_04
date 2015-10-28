@@ -28,7 +28,10 @@ Public Class Gameplay
     Private bonusScore As Integer
     ' Amount of round played
     Private roundPlayed As Integer
-
+    ' Counts each scorecategory
+    Private forcedCount As Integer
+    ' True if game is finished
+    Private gameIsFinished As Boolean
 
     ' Constructor with important arguments for new game.
     Public Sub New(ByVal dicePicBoxes As PictureBox(), ByVal playersName As String(), ByVal isForced As Boolean, ByVal isMaxi As Boolean, ByVal ScoreBoardControll As ScoreBoardControll)
@@ -36,6 +39,7 @@ Public Class Gameplay
         Me.isForced = isForced
         Me.isMaxi = isMaxi
         Me.ScoreBoardTable = ScoreBoardControll
+        gameIsFinished = False
         rows = ScoreBoardTable.table.RowCount - 1
 
         If isMaxi Then
@@ -60,23 +64,33 @@ Public Class Gameplay
         If isFirstTurn Then
             'First player in players(0) starts playing. If we use -1 as currentplayer next player will be 0.
             currentPlayer = 0
+            roundPlayed += 1
+            forcedCount += 1
+
         ElseIf currentPlayer + 1 < players.Length
             currentPlayer = currentPlayer + 1
         Else
+            ' Check if game is finished
+            isGameFinished()
+
             currentPlayer = 0
             roundPlayed += 1
+            forcedCount += 1
+
         End If
-        'Remove hold from all dices
-        resetDiceHold()
-        'Highlight current player 
-        ScoreBoardTable.MarkCurrentPlayer(currentPlayer)
-        'Deactivate scoreboard before first roll
-        scoreBoardActive = False
-        'Deactivate dices before first roll
-        dicesActive = False
 
-        rollsLeft = 3
+        If Not gameIsFinished Then
 
+            'Remove hold from all dices
+            resetDiceHold()
+            'Highlight current player 
+            ScoreBoardTable.MarkCurrentPlayer(currentPlayer)
+            'Deactivate scoreboard before first roll
+            scoreBoardActive = False
+            'Deactivate dices before first roll
+            dicesActive = False
+            rollsLeft = 3
+        End If
     End Sub
 
     ' Function for initialize player objects
@@ -158,12 +172,17 @@ Public Class Gameplay
         Next i
 
         'Change hold dices back to normal color if its last roll
-        If rollsLeft = 0 Then
-            resetDiceHold()
-        End If
+        ' If rollsLeft = 0 Then
+        ' resetDiceHold()
+        'End If
 
         If rollsLeft < 1 Then
             dicesActive = False
+
+            If isForced Then
+                forcedChoose()
+            End If
+
         Else
             dicesActive = True
         End If
@@ -178,6 +197,15 @@ Public Class Gameplay
         Next i
     End Sub
 
+    Public Sub forcedChoose()
+        'Skip sum and bonus
+        If forcedCount = 7 Then
+            forcedCount = 9
+        End If
+        Dim textLabel As Label = ScoreBoardTable.table.GetControlFromPosition(0, forcedCount)
+        Dim tagNameTwo As Integer = Convert.ToInt32(textLabel.Tag)
+        checkScore(tagNameTwo, forcedCount)
+    End Sub
 
     'This function is used when dice Pictureboxes are clicked. Toggle between hold and unhold.
     Public Sub ToggleDiceHold(sender As Object)
@@ -203,8 +231,6 @@ Public Class Gameplay
 
             ' Check if its bonustime
             checkBonus()
-            ' Check if game is finished
-            isGameFinished()
             ' Next players turn
             nextTurn(False)
             isAllowed = True
@@ -215,10 +241,68 @@ Public Class Gameplay
     End Function
 
     Private Sub isGameFinished()
-        If roundPlayed = rows Then
-            ' Calculate finished score
+
+        ' 3 is because sum, bonus and total
+        Dim scoreCombis As Integer = rows - 3
+
+        If roundPlayed = scoreCombis Then
+            gameIsFinished = True
+            'Deactivate scoreboard
+            scoreBoardActive = False
+            'Deactivate dices
+            dicesActive = False
+            Dim winner(,) As Integer = findWinner()
+
+            Dim winText As String = ""
+            Dim pos As Integer = 1
+            For i = winner.GetLength(0) - 1 To 0 Step -1
+                Dim name As String = players(winner(i, 1)).getName
+                winText &= pos & ". " & name & "  " & winner(i, 0) & Environment.NewLine
+                pos += 1
+            Next
+
+            MessageBox.Show(winText)
         End If
+
+
     End Sub
+
+    ' Function to calculate and write oute winners
+    Private Function findWinner()
+
+        Dim winner(players.Length - 1, 2) As Integer
+
+        For i = 0 To players.Length - 1
+            Dim currentP As Player = players(i)
+            Dim totalScore As Integer = currentP.getTotalScore()
+            winner(i, 0) = totalScore
+            winner(i, 1) = i
+            currentP.updateScore(currentP.playersScore.GetLength(0) - 1, totalScore)
+            ScoreBoardTable.upDatePlayersScore(i, currentP.playersScore)
+        Next i
+
+        Return sort2d(winner)
+
+    End Function
+
+    'Classic Selection Sorting of winners
+    Private Function sort2d(ByVal intArray As Integer(,))
+        For i = 0 To players.GetLength(0) - 2
+            Dim min As Integer = intArray(i, 0)
+            Dim minIndex As Integer = i
+            For j = i + 1 To players.GetLength(0) - 1
+                If intArray(j, 0) < min Then
+                    min = intArray(j, 0)
+                    minIndex = j
+                End If
+            Next
+            intArray(minIndex, 0) = intArray(i, 0)
+            intArray(i, 0) = min
+        Next
+
+        Return intArray
+
+    End Function
 
     Private Sub checkBonus()
 
@@ -362,10 +446,12 @@ Public Class Gameplay
                     If currentDiceScore(i) = currentDiceScore.Length Then
                         If isMaxi Then
                             bestScore = 100
+
+                        Else
+                            bestScore = 50
                         End If
-                    Else
-                        bestScore = 50
                     End If
+
                 Next
 
             ' Skipping 18 because thats Total
@@ -466,6 +552,22 @@ Public Class Gameplay
         Get
             ' Gets the property value.
             Return dicesActive
+
+        End Get
+    End Property
+
+    Public ReadOnly Property isGameFinishedValue() As Integer
+        Get
+            ' Gets the property value.
+            Return gameIsFinished
+
+        End Get
+    End Property
+
+    Public ReadOnly Property isGameForced() As Boolean
+        Get
+            ' Gets the property value.
+            Return isForced
 
         End Get
     End Property
