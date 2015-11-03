@@ -24,3 +24,17 @@ C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControl
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControllMaxi.resources
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.YatzyForm.resources
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.Optionsform.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\bin\Debug\Yatzy.exe.config
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.exe
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.xml
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.pdb
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\bin\Debug\Yatzy.exe
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\bin\Debug\Yatzy.pdb
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\bin\Debug\Yatzy.xml
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.vbprojResolveAssemblyReference.cache
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.Optionsform.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.YatzyForm.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.Resources.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControll.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControllMaxi.resources
+C:\Users\LeneMarie\Documents\GitHubVisualStudio\Yatzy_Team_04\obj\Debug\Yatzy.vbproj.GenerateResource.Cache

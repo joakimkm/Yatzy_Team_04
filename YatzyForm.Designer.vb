@@ -46,9 +46,10 @@ Partial Class YatzyForm
         '
         'NewGame
         '
-        Me.NewGame.Location = New System.Drawing.Point(93, 12)
+        Me.NewGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NewGame.Location = New System.Drawing.Point(12, 12)
         Me.NewGame.Name = "NewGame"
-        Me.NewGame.Size = New System.Drawing.Size(75, 23)
+        Me.NewGame.Size = New System.Drawing.Size(94, 31)
         Me.NewGame.TabIndex = 2
         Me.NewGame.Text = "New game"
         Me.NewGame.UseVisualStyleBackColor = True
@@ -146,7 +147,7 @@ Partial Class YatzyForm
         Me.DiceBox.Controls.Add(Me.Dice3)
         Me.DiceBox.Controls.Add(Me.Dice2)
         Me.DiceBox.Controls.Add(Me.Dice1)
-        Me.DiceBox.Location = New System.Drawing.Point(408, 60)
+        Me.DiceBox.Location = New System.Drawing.Point(408, 56)
         Me.DiceBox.Name = "DiceBox"
         Me.DiceBox.Size = New System.Drawing.Size(90, 433)
         Me.DiceBox.TabIndex = 5
@@ -186,7 +187,7 @@ Partial Class YatzyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(550, 611)
+        Me.ClientSize = New System.Drawing.Size(514, 611)
         Me.Controls.Add(Me.submitBtn)
         Me.Controls.Add(Me.DiceBox)
         Me.Controls.Add(Me.NewGame)
