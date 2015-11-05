@@ -2,8 +2,6 @@
 Public Class Player
     ' Players username
     Private name As String
-    ' Is player computer or not
-    Private isComputer As Boolean
     ' Array with score
     Private scoreBoard As Integer(,)
     ' Stores rolls left before bonus should be calculated
@@ -12,9 +10,8 @@ Public Class Player
     Public bonusPoints As Integer
 
     ' Constructor for player class
-    Public Sub New(ByVal name As String, ByVal isComputer As Boolean, ByVal scoreBoard As Integer(,))
+    Public Sub New(ByVal name As String, ByVal scoreBoard As Integer(,))
         Me.name = name
-        Me.isComputer = isComputer
         Me.scoreBoard = scoreBoard
         leftForBonusCalc = 6
     End Sub
@@ -59,9 +56,9 @@ Public Class Player
     End Sub
 
     ' Stroke score combination
-    Public Function stroke(ByVal strokeIndex As Integer)
+    Public Sub stroke(ByVal strokeIndex As Integer)
         scoreBoard(strokeIndex, 1) = 1
-    End Function
+    End Sub
 
     ' This checks if score have been sumited before
     Public Function isScoreAllowed()

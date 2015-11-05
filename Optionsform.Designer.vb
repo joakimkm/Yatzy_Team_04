@@ -50,6 +50,7 @@ Partial Class Optionsform
         'PlayerText1
         '
         Me.PlayerText1.Location = New System.Drawing.Point(54, 70)
+        Me.PlayerText1.MaxLength = 9
         Me.PlayerText1.Name = "PlayerText1"
         Me.PlayerText1.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText1.TabIndex = 1
@@ -59,6 +60,7 @@ Partial Class Optionsform
         'PlayerText2
         '
         Me.PlayerText2.Location = New System.Drawing.Point(54, 96)
+        Me.PlayerText2.MaxLength = 8
         Me.PlayerText2.Name = "PlayerText2"
         Me.PlayerText2.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText2.TabIndex = 2
@@ -68,6 +70,7 @@ Partial Class Optionsform
         'PlayerText3
         '
         Me.PlayerText3.Location = New System.Drawing.Point(54, 122)
+        Me.PlayerText3.MaxLength = 8
         Me.PlayerText3.Name = "PlayerText3"
         Me.PlayerText3.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText3.TabIndex = 3
@@ -77,6 +80,7 @@ Partial Class Optionsform
         'PlayerText4
         '
         Me.PlayerText4.Location = New System.Drawing.Point(54, 148)
+        Me.PlayerText4.MaxLength = 8
         Me.PlayerText4.Name = "PlayerText4"
         Me.PlayerText4.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText4.TabIndex = 4
@@ -87,7 +91,7 @@ Partial Class Optionsform
         '
         Me.PlayerNumb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PlayerNumb.FormattingEnabled = True
-        Me.PlayerNumb.Items.AddRange(New Object() {"1 (vs PC)", "2", "3", "4"})
+        Me.PlayerNumb.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.PlayerNumb.Location = New System.Drawing.Point(104, 29)
         Me.PlayerNumb.Name = "PlayerNumb"
         Me.PlayerNumb.Size = New System.Drawing.Size(75, 21)

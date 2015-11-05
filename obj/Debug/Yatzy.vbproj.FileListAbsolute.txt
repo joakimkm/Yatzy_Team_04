@@ -24,3 +24,4 @@ C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControl
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.ScoreBoardControllMaxi.resources
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.YatzyForm.resources
 C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.Optionsform.resources
+C:\Users\Joakim\Documents\GitHub\Yatzy_Team_04\obj\Debug\Yatzy.Highscore.resources

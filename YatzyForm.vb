@@ -184,4 +184,10 @@ Public Class YatzyForm
         gameObj.forcedChoose()
         submitBtn.Enabled = False
     End Sub
+
+    Private Sub HighScoreBtn_Click(sender As Object, e As EventArgs) Handles HighScoreBtn.Click
+        Dim highScoreForm As New Highscore()
+        highScoreForm.ShowDialog(Me)
+        highScoreForm.Dispose()
+    End Sub
 End Class

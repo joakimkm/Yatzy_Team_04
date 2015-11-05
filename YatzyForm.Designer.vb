@@ -35,6 +35,7 @@ Partial Class YatzyForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rollsLeft = New System.Windows.Forms.Label()
         Me.submitBtn = New System.Windows.Forms.Button()
+        Me.HighScoreBtn = New System.Windows.Forms.Button()
         CType(Me.Dice6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dice4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,11 +183,21 @@ Partial Class YatzyForm
         Me.submitBtn.UseVisualStyleBackColor = False
         Me.submitBtn.Visible = False
         '
+        'HighScoreBtn
+        '
+        Me.HighScoreBtn.Location = New System.Drawing.Point(193, 12)
+        Me.HighScoreBtn.Name = "HighScoreBtn"
+        Me.HighScoreBtn.Size = New System.Drawing.Size(75, 23)
+        Me.HighScoreBtn.TabIndex = 7
+        Me.HighScoreBtn.Text = "Highscore"
+        Me.HighScoreBtn.UseVisualStyleBackColor = True
+        '
         'YatzyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(550, 611)
+        Me.Controls.Add(Me.HighScoreBtn)
         Me.Controls.Add(Me.submitBtn)
         Me.Controls.Add(Me.DiceBox)
         Me.Controls.Add(Me.NewGame)
@@ -215,4 +226,5 @@ Partial Class YatzyForm
     Friend WithEvents Label1 As Label
     Friend WithEvents rollsLeft As Label
     Friend WithEvents submitBtn As Button
+    Friend WithEvents HighScoreBtn As Button
 End Class

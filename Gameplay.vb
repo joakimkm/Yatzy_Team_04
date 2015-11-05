@@ -96,31 +96,12 @@ Public Class Gameplay
     ' Function for initialize player objects
     Public Sub initPlayers(ByVal playersName As String())
 
-        ' If array contain more than one name, we dont need a computer playing.
-        If playersName.Length > 1 Then
-
-            ReDim players(playersName.Length - 1)
-            'Loop through players name and use them for arguments for player objects.
+        ReDim players(playersName.Length - 1)
+            'Loop through players name and use them for arguments for new player objects.
             For i = 0 To playersName.Length - 1
                 Dim scoreBoard(rows, 1) As Integer
-                players(i) = New Player(playersName(i), False, scoreBoard)
+                players(i) = New Player(playersName(i), scoreBoard)
             Next i
-
-            ' If array contain only one name, we  need a computer playing.
-        Else
-            ' We store one players score in a two dimensonal array because second dimension are stroked numbers 
-            Dim scoreBoardZero(rows, 1) As Integer
-            Dim scoreBoardOne(rows, 1) As Integer
-
-            ReDim players(1)
-            Dim Computername As String = "Computer"
-            players(0) = New Player(playersName(0), False, scoreBoardZero)
-            players(1) = New Player(Computername, True, scoreBoardOne)
-
-            ReDim Preserve playersName(2)
-            playersName(1) = "Computer"
-
-        End If
 
         ScoreBoardTable.setPlayerNames(playersName)
 
@@ -246,26 +227,62 @@ Public Class Gameplay
         Dim scoreCombis As Integer = rows - 3
 
         If roundPlayed = scoreCombis Then
+
             gameIsFinished = True
             'Deactivate scoreboard
             scoreBoardActive = False
             'Deactivate dices
             dicesActive = False
+
             Dim winner(,) As Integer = findWinner()
+            Dim highscoreText As String = getHighScoreText(winner)
 
             Dim winText As String = ""
             Dim pos As Integer = 1
-            For i = winner.GetLength(0) - 1 To 0 Step -1
+            For i = 0 To winner.GetLength(0) - 1
                 Dim name As String = players(winner(i, 1)).getName
                 winText &= pos & ". " & name & "  " & winner(i, 0) & Environment.NewLine
                 pos += 1
             Next
 
-            MessageBox.Show(winText)
+            MessageBox.Show(winText & Environment.NewLine & highscoreText)
+
         End If
 
 
     End Sub
+
+    Private Function getHighScoreText(ByVal sortedPlayers As Integer(,))
+
+        Dim highScoreText As String = ""
+        Dim highScoreObj As Highscore = New Highscore()
+        Dim yatzyType As Integer = 0
+
+        If isMaxi And Not isForced Then yatzyType = 1
+        If Not isMaxi And isForced Then yatzyType = 2
+        If Not isMaxi And Not isForced Then yatzyType = 3
+
+        For i = 0 To sortedPlayers.GetLength(0) - 1
+            Dim name As String = players(sortedPlayers(i, 1)).getName
+            Dim totalScore As String = sortedPlayers(i, 0)
+            Dim currentDate As String = DateTime.Now.ToString("dd/MM/yy")
+
+            Dim hSArgument = New String() {name, totalScore, currentDate}
+
+            Dim position As Integer = highScoreObj.writeScore(hSArgument, yatzyType)
+
+            If position > 0 Then highScoreText = highScoreText & name & " got " & position & ".place" & Environment.NewLine
+        Next
+
+        If Not String.IsNullOrEmpty(highScoreText) Then
+
+            highScoreText = "New highscore!" & Environment.NewLine & highScoreText
+
+        End If
+
+        Return highScoreText
+
+    End Function
 
     ' Function to calculate and write oute winners
     Private Function findWinner()
@@ -275,8 +292,13 @@ Public Class Gameplay
         For i = 0 To players.Length - 1
             Dim currentP As Player = players(i)
             Dim totalScore As Integer = currentP.getTotalScore()
+
             winner(i, 0) = totalScore
             winner(i, 1) = i
+
+            'Console.WriteLine(i)
+            'Console.WriteLine(totalScore)
+
             currentP.updateScore(currentP.playersScore.GetLength(0) - 1, totalScore)
             ScoreBoardTable.upDatePlayersScore(i, currentP.playersScore)
         Next i
@@ -285,19 +307,22 @@ Public Class Gameplay
 
     End Function
 
-    'Classic Selection Sorting of winners
+    'Selection Sorting of winners
     Private Function sort2d(ByVal intArray As Integer(,))
-        For i = 0 To players.GetLength(0) - 2
-            Dim min As Integer = intArray(i, 0)
-            Dim minIndex As Integer = i
-            For j = i + 1 To players.GetLength(0) - 1
-                If intArray(j, 0) < min Then
-                    min = intArray(j, 0)
-                    minIndex = j
-                End If
-            Next
-            intArray(minIndex, 0) = intArray(i, 0)
-            intArray(i, 0) = min
+
+        Dim scoreArray(intArray.GetLength(0)) As Integer
+        Dim indexArray(intArray.GetLength(0)) As Integer
+
+        For i = 0 To intArray.GetLength(0) - 1
+            scoreArray(i) = intArray(i, 0)
+            indexArray(i) = intArray(i, 1)
+        Next
+        Array.Sort(scoreArray, indexArray)
+        Array.Reverse(scoreArray)
+        Array.Reverse(indexArray)
+        For i = 0 To intArray.GetLength(0) - 1
+            intArray(i, 0) = scoreArray(i)
+            intArray(i, 1) = indexArray(i)
         Next
 
         Return intArray

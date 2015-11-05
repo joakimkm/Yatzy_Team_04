@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dice.vb" />
+    <Compile Include="Highscore.Designer.vb">
+      <DependentUpon>Highscore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Highscore.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Optionsform.Designer.vb">
       <DependentUpon>Optionsform.vb</DependentUpon>
     </Compile>
@@ -80,7 +86,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gameplay.vb" />
-    <Compile Include="Highscore.vb" />
     <Compile Include="YatzyForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Highscore.resx">
+      <DependentUpon>Highscore.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Optionsform.resx">
       <DependentUpon>Optionsform.vb</DependentUpon>
     </EmbeddedResource>
