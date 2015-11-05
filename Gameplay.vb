@@ -42,11 +42,13 @@ Public Class Gameplay
         gameIsFinished = False
         rows = ScoreBoardTable.table.RowCount - 1
 
+        bonusLimit = 63
         If isMaxi Then
-            bonusLimit = 84
             bonusScore = 100
+            If Not isForced Then
+                'bonusLimit = 84
+            End If
         Else
-            bonusLimit = 63
             bonusScore = 50
         End If
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Optionsform
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Optionsform
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.StartGameBtn = New System.Windows.Forms.Button()
         Me.PlayerText1 = New System.Windows.Forms.TextBox()
@@ -40,7 +40,7 @@ Partial Class Optionsform
         'StartGameBtn
         '
         Me.StartGameBtn.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.StartGameBtn.Location = New System.Drawing.Point(104, 232)
+        Me.StartGameBtn.Location = New System.Drawing.Point(125, 226)
         Me.StartGameBtn.Name = "StartGameBtn"
         Me.StartGameBtn.Size = New System.Drawing.Size(75, 23)
         Me.StartGameBtn.TabIndex = 0
@@ -50,7 +50,6 @@ Partial Class Optionsform
         'PlayerText1
         '
         Me.PlayerText1.Location = New System.Drawing.Point(54, 70)
-        Me.PlayerText1.MaxLength = 9
         Me.PlayerText1.Name = "PlayerText1"
         Me.PlayerText1.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText1.TabIndex = 1
@@ -60,7 +59,6 @@ Partial Class Optionsform
         'PlayerText2
         '
         Me.PlayerText2.Location = New System.Drawing.Point(54, 96)
-        Me.PlayerText2.MaxLength = 8
         Me.PlayerText2.Name = "PlayerText2"
         Me.PlayerText2.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText2.TabIndex = 2
@@ -70,7 +68,6 @@ Partial Class Optionsform
         'PlayerText3
         '
         Me.PlayerText3.Location = New System.Drawing.Point(54, 122)
-        Me.PlayerText3.MaxLength = 8
         Me.PlayerText3.Name = "PlayerText3"
         Me.PlayerText3.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText3.TabIndex = 3
@@ -80,7 +77,6 @@ Partial Class Optionsform
         'PlayerText4
         '
         Me.PlayerText4.Location = New System.Drawing.Point(54, 148)
-        Me.PlayerText4.MaxLength = 8
         Me.PlayerText4.Name = "PlayerText4"
         Me.PlayerText4.Size = New System.Drawing.Size(125, 20)
         Me.PlayerText4.TabIndex = 4
@@ -92,7 +88,7 @@ Partial Class Optionsform
         Me.PlayerNumb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PlayerNumb.FormattingEnabled = True
         Me.PlayerNumb.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.PlayerNumb.Location = New System.Drawing.Point(104, 29)
+        Me.PlayerNumb.Location = New System.Drawing.Point(125, 29)
         Me.PlayerNumb.Name = "PlayerNumb"
         Me.PlayerNumb.Size = New System.Drawing.Size(75, 21)
         Me.PlayerNumb.TabIndex = 5
@@ -100,7 +96,7 @@ Partial Class Optionsform
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(5, 32)
+        Me.Label1.Location = New System.Drawing.Point(24, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(95, 13)
         Me.Label1.TabIndex = 6
@@ -109,7 +105,7 @@ Partial Class Optionsform
         'PlayerLabel1
         '
         Me.PlayerLabel1.AutoSize = True
-        Me.PlayerLabel1.Location = New System.Drawing.Point(13, 73)
+        Me.PlayerLabel1.Location = New System.Drawing.Point(34, 72)
         Me.PlayerLabel1.Name = "PlayerLabel1"
         Me.PlayerLabel1.Size = New System.Drawing.Size(16, 13)
         Me.PlayerLabel1.TabIndex = 7
@@ -119,7 +115,7 @@ Partial Class Optionsform
         'PlayerLabel2
         '
         Me.PlayerLabel2.AutoSize = True
-        Me.PlayerLabel2.Location = New System.Drawing.Point(13, 99)
+        Me.PlayerLabel2.Location = New System.Drawing.Point(34, 98)
         Me.PlayerLabel2.Name = "PlayerLabel2"
         Me.PlayerLabel2.Size = New System.Drawing.Size(16, 13)
         Me.PlayerLabel2.TabIndex = 8
@@ -129,7 +125,7 @@ Partial Class Optionsform
         'PlayerLabel3
         '
         Me.PlayerLabel3.AutoSize = True
-        Me.PlayerLabel3.Location = New System.Drawing.Point(13, 125)
+        Me.PlayerLabel3.Location = New System.Drawing.Point(34, 124)
         Me.PlayerLabel3.Name = "PlayerLabel3"
         Me.PlayerLabel3.Size = New System.Drawing.Size(16, 13)
         Me.PlayerLabel3.TabIndex = 9
@@ -139,7 +135,7 @@ Partial Class Optionsform
         'PlayerLabel4
         '
         Me.PlayerLabel4.AutoSize = True
-        Me.PlayerLabel4.Location = New System.Drawing.Point(13, 151)
+        Me.PlayerLabel4.Location = New System.Drawing.Point(34, 150)
         Me.PlayerLabel4.Name = "PlayerLabel4"
         Me.PlayerLabel4.Size = New System.Drawing.Size(16, 13)
         Me.PlayerLabel4.TabIndex = 10
@@ -149,7 +145,7 @@ Partial Class Optionsform
         'Forced
         '
         Me.Forced.AutoSize = True
-        Me.Forced.Location = New System.Drawing.Point(39, 196)
+        Me.Forced.Location = New System.Drawing.Point(60, 192)
         Me.Forced.Name = "Forced"
         Me.Forced.Size = New System.Drawing.Size(59, 17)
         Me.Forced.TabIndex = 0
@@ -159,7 +155,7 @@ Partial Class Optionsform
         'Maxi
         '
         Me.Maxi.AutoSize = True
-        Me.Maxi.Location = New System.Drawing.Point(104, 196)
+        Me.Maxi.Location = New System.Drawing.Point(125, 192)
         Me.Maxi.Name = "Maxi"
         Me.Maxi.Size = New System.Drawing.Size(77, 17)
         Me.Maxi.TabIndex = 1
@@ -171,7 +167,7 @@ Partial Class Optionsform
         Me.AcceptButton = Me.StartGameBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(206, 271)
+        Me.ClientSize = New System.Drawing.Size(236, 271)
         Me.Controls.Add(Me.Forced)
         Me.Controls.Add(Me.Maxi)
         Me.Controls.Add(Me.PlayerLabel4)
