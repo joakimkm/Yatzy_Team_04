@@ -469,8 +469,10 @@ Public Class Gameplay
                 Next
             ' Yatzy
             Case 17
+
                 For i = 0 To currentDiceScore.Length - 1
-                    If currentDiceScore(i) = currentDiceScore.Length Then
+
+                    If currentDiceScore(i) = diceArray.Length Then
                         If isMaxi Then
                             bestScore = 100
 
