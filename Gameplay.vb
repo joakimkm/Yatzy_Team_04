@@ -46,7 +46,7 @@ Public Class Gameplay
         If isMaxi Then
             bonusScore = 100
             If Not isForced Then
-                'bonusLimit = 84
+                bonusLimit = 84
             End If
         Else
             bonusScore = 50
