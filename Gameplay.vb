@@ -43,11 +43,11 @@ Public Class Gameplay
         rows = ScoreBoardTable.table.RowCount - 1
 
         If isMaxi Then
-            bonusLimit = 75
-            bonusScore = 50
+            bonusLimit = 84
+            bonusScore = 100
         Else
             bonusLimit = 63
-            bonusScore = 25
+            bonusScore = 50
         End If
 
         'Init dice objects and store Pictureboxes for dices in them.

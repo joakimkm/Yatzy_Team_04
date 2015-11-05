@@ -57,7 +57,7 @@ Partial Class ScoreBoardControllMaxi
         Me.TableLayoutPanelMaxi.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanelMaxi.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanelMaxi.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
-        Me.TableLayoutPanelMaxi.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
+        Me.TableLayoutPanelMaxi.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
         Me.TableLayoutPanelMaxi.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanelMaxi.Controls.Add(Me.Label2, 0, 2)
         Me.TableLayoutPanelMaxi.Controls.Add(Me.Label3, 0, 3)
@@ -324,7 +324,7 @@ Partial Class ScoreBoardControllMaxi
         Me.Label18.Size = New System.Drawing.Size(74, 20)
         Me.Label18.TabIndex = 17
         Me.Label18.Tag = "15"
-        Me.Label18.Text = "Cabin"
+        Me.Label18.Text = "Cabin (2+3)"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label19
@@ -336,7 +336,7 @@ Partial Class ScoreBoardControllMaxi
         Me.Label19.Size = New System.Drawing.Size(74, 20)
         Me.Label19.TabIndex = 18
         Me.Label19.Tag = "22"
-        Me.Label19.Text = "House"
+        Me.Label19.Text = "House (3+3)"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label20
@@ -348,7 +348,7 @@ Partial Class ScoreBoardControllMaxi
         Me.Label20.Size = New System.Drawing.Size(74, 20)
         Me.Label20.TabIndex = 19
         Me.Label20.Tag = "23"
-        Me.Label20.Text = "Tower"
+        Me.Label20.Text = "Tower (2+4)"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label21

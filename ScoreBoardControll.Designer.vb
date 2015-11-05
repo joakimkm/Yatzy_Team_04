@@ -90,7 +90,7 @@ Partial Class ScoreBoardControll
         Me.Label15.Size = New System.Drawing.Size(74, 20)
         Me.Label15.TabIndex = 14
         Me.Label15.Tag = "15"
-        Me.Label15.Text = "House"
+        Me.Label15.Text = "House (2+3)"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label14
@@ -269,7 +269,7 @@ Partial Class ScoreBoardControll
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Label2, 0, 2)
         Me.TableLayoutPanel.Controls.Add(Me.Label3, 0, 3)
