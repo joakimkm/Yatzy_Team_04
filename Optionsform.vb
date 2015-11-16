@@ -8,6 +8,9 @@
 
     ' This function are called when Optionsform load
     Private Sub Optionsform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load and set new form icon 
+        Dim ico As Icon = My.Resources.ResourceManager.GetObject("favicon")
+        Me.Icon = ico
         'Init arrays with controls from form. 
         textBoxes = {PlayerText1, PlayerText2, PlayerText3, PlayerText4}
         labels = {PlayerLabel1, PlayerLabel2, PlayerLabel3, PlayerLabel4}

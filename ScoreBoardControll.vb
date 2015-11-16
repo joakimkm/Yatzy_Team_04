@@ -17,6 +17,7 @@
 
         Me.isMaxi = isMaxi
 
+        ' If its maxi we have to load another scoreboard from ScoreBoardControllMaxi class.
         If isMaxi Then
             TableLayoutPanel.Dispose()
             Dim maxiControl As ScoreBoardControllMaxi = New ScoreBoardControllMaxi()
@@ -31,6 +32,7 @@
         initLabels()
     End Sub
 
+    ' Display players name in scoreboard
     Public Sub setPlayerNames(ByVal names As String())
 
         Dim arrayLength As Integer = names.Length - 1
@@ -41,6 +43,7 @@
 
     End Sub
 
+    ' Loop through all cells and create score labels. Store this labels in array.
     Public Sub initLabels()
         ' - 2 because we dont want to target rows with scorenames
         Dim columns As Integer = table.ColumnCount - 2
@@ -72,6 +75,7 @@
 
     End Sub
 
+    ' Add events to all labels for score combinations
     Private Sub initLabelEvents()
 
         Dim rows As Integer = table.RowCount - 1
@@ -88,6 +92,7 @@
 
     End Sub
 
+    ' Raise events in yatzyform objects
     Private Sub Label_MouseEnter(sender As Object, e As EventArgs)
         RaiseEvent MouseEnterLabel(sender, e)
     End Sub
@@ -100,6 +105,7 @@
         RaiseEvent MouseClickLabel(sender, e)
     End Sub
 
+    ' Highlight current player
     Public Sub MarkCurrentPlayer(ByVal currentPlayer As Integer)
 
         'Reset all colors back to normal before adding new
@@ -110,6 +116,7 @@
         labels(currentPlayer, 0).BackColor = Color.Yellow
     End Sub
 
+    ' Display updated score on board
     Public Sub upDatePlayersScore(ByVal currentPlayer As Integer, ByVal playersScore As Integer(,))
 
         Dim length As Integer = playersScore.GetLength(0) - 1

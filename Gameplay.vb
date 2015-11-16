@@ -61,7 +61,8 @@ Public Class Gameplay
 
     End Sub
 
-    Public Sub nextTurn(ByRef isFirstTurn As Boolean)
+    ' Get ready for next turn
+    Private Sub nextTurn(ByRef isFirstTurn As Boolean)
 
         If isFirstTurn Then
             'First player in players(0) starts playing. If we use -1 as currentplayer next player will be 0.
@@ -96,14 +97,14 @@ Public Class Gameplay
     End Sub
 
     ' Function for initialize player objects
-    Public Sub initPlayers(ByVal playersName As String())
+    Private Sub initPlayers(ByVal playersName As String())
 
         ReDim players(playersName.Length - 1)
-            'Loop through players name and use them for arguments for new player objects.
-            For i = 0 To playersName.Length - 1
-                Dim scoreBoard(rows, 1) As Integer
-                players(i) = New Player(playersName(i), scoreBoard)
-            Next i
+        'Loop through players name and use them for arguments for new player objects.
+        For i = 0 To playersName.Length - 1
+            Dim scoreBoard(rows, 1) As Integer
+            players(i) = New Player(playersName(i), scoreBoard)
+        Next i
 
         ScoreBoardTable.setPlayerNames(playersName)
 
@@ -111,7 +112,7 @@ Public Class Gameplay
 
 
     ' Function for init dices
-    Public Sub initDices(ByVal dicePicBoxes As PictureBox())
+    Private Sub initDices(ByVal dicePicBoxes As PictureBox())
 
         ReDim diceArray(dicePicBoxes.Length - 1)
         ' Redim with 5 because both normal and maxi have highest possible dice score as 6
@@ -123,6 +124,7 @@ Public Class Gameplay
 
     End Sub
 
+    ' Change dice color when mouse enter or leave
     Public Sub ChangeDiceColor(ByVal sender As Object, ByVal shouldChange As Boolean)
         'Cast sender object to PictureBox
         Dim thisPictureBox As PictureBox = CType(sender, PictureBox)
@@ -173,6 +175,7 @@ Public Class Gameplay
 
     End Sub
 
+    ' Dice hold is reset after each players turn
     Private Sub resetDiceHold()
         For i = 0 To diceArray.Length - 1
             diceArray(i).DiceHold = False
@@ -180,6 +183,7 @@ Public Class Gameplay
         Next i
     End Sub
 
+    ' This is called when player click submit in forced game
     Public Sub forcedChoose()
         'Skip sum and bonus
         If forcedCount = 7 Then
@@ -199,6 +203,7 @@ Public Class Gameplay
         diceArray(tagName - 1).ToggleHold()
     End Sub
 
+    ' Check if score combination choosed by player are valid. If not score combination is stroked
     Function checkScore(ByVal scoreTag As Integer, ByVal scoreIndexRow As Integer)
 
         ' Return false if score combination was invalid
@@ -223,6 +228,7 @@ Public Class Gameplay
 
     End Function
 
+    ' Check if game is finished and show message box if thats true
     Private Sub isGameFinished()
 
         ' 3 is because sum, bonus and total
@@ -254,6 +260,7 @@ Public Class Gameplay
 
     End Sub
 
+    ' Function for creating highscore text
     Private Function getHighScoreText(ByVal sortedPlayers As Integer(,))
 
         Dim highScoreText As String = ""
@@ -286,7 +293,7 @@ Public Class Gameplay
 
     End Function
 
-    ' Function to calculate and write oute winners
+    ' Function to calculate and write out winners
     Private Function findWinner()
 
         Dim winner(players.Length - 1, 2) As Integer
@@ -309,7 +316,7 @@ Public Class Gameplay
 
     End Function
 
-    'Selection Sorting of winners
+    'Selection sorting of winners
     Private Function sort2d(ByVal intArray As Integer(,))
 
         Dim scoreArray(intArray.GetLength(0)) As Integer
@@ -331,6 +338,7 @@ Public Class Gameplay
 
     End Function
 
+    ' Check if current player have bonus
     Private Sub checkBonus()
 
         Dim currentP As Player = players(currentPlayer)
@@ -559,9 +567,10 @@ Public Class Gameplay
 
 
     ' Function to read if dice are at hold
-    Public Function GetDiceHold(ByVal diceIndex As Integer)
+    Private Function GetDiceHold(ByVal diceIndex As Integer)
         Return diceArray(diceIndex).DiceHold
     End Function
+
     ' Function for reading rolls left
     Public ReadOnly Property rollsLeftValue() As Integer
         Get
@@ -585,6 +594,7 @@ Public Class Gameplay
         End Get
     End Property
 
+    ' Read if game is finished
     Public ReadOnly Property isGameFinishedValue() As Integer
         Get
             ' Gets the property value.
@@ -593,6 +603,7 @@ Public Class Gameplay
         End Get
     End Property
 
+    ' Read if game is forced
     Public ReadOnly Property isGameForced() As Boolean
         Get
             ' Gets the property value.

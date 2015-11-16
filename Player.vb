@@ -16,6 +16,7 @@ Public Class Player
         leftForBonusCalc = 6
     End Sub
 
+    ' Calculate total score
     Public Function getTotalScore()
         Dim totalSum As Integer
         Dim length As Integer = scoreBoard.GetLength(0) - 1
@@ -35,10 +36,8 @@ Public Class Player
         Return isValid
     End Function
 
+    ' Update players score
     Sub updateScore(ByVal scoreIndex As Integer, ByVal scoreValue As Integer)
-
-        ' Console.WriteLine("scoreIndex" & scoreIndex)
-        ' Console.WriteLine("scoreBoard" & scoreBoard.Length)
 
         If scoreValue > 0 Then
             scoreBoard(scoreIndex, 0) = scoreValue

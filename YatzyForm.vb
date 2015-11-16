@@ -1,15 +1,17 @@
 ﻿' YatzyForm controls GUI for the game
 Public Class YatzyForm
 
-    'This is where game adress to game object are stored
+    'Main object for gameplay
     Private gameObj As Gameplay
-
+    'Object to scoreboard controller
     Private scoreControll As ScoreBoardControll
 
     Private Sub YatzyForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         ' Set DiceBox hidden when YatzyForm loads
         DiceBox.Visible = False
+        ' Load and set new form icon 
+        Dim ico As Icon = My.Resources.ResourceManager.GetObject("favicon")
+        Me.Icon = ico
     End Sub
 
     'All necessary variables to start new game is passed as arguments to function
@@ -90,10 +92,11 @@ Public Class YatzyForm
         'Update roll left text
         rollsLeft.Text = rollsLeftInt
 
+        'Disable rollbtn if there are no rolls left
         If rollsLeftInt = 0 Then
             RollBtn.Enabled = False
         End If
-
+        'If yatzy game is forced submitbtn should be enabled
         If gameObj.isGameForced Then
             submitBtn.Enabled = True
         End If
@@ -133,6 +136,7 @@ Public Class YatzyForm
 
     End Sub
 
+    'Event for changing label color on scoreboard when mouse enter
     Private Sub MouseEnterLabel(sender As Object, e As EventArgs)
         If gameObj.isScoreboardActive Then
             Dim thisCellLabel As Label = CType(sender, Label)
@@ -141,6 +145,7 @@ Public Class YatzyForm
         End If
     End Sub
 
+    'Event for changing back label color on scoreboard when mouse leave
     Private Sub MouseLeaveLabel(sender As Object, e As EventArgs)
         If gameObj.isScoreboardActive Then
             Dim thisCellLabel As Label = CType(sender, Label)
@@ -149,6 +154,7 @@ Public Class YatzyForm
         End If
     End Sub
 
+    'Event when label in scoreboard is clicked
     Private Sub MouseClickLabel(sender As Object, e As EventArgs)
 
         If gameObj.isScoreboardActive Then
@@ -172,6 +178,7 @@ Public Class YatzyForm
 
     End Sub
 
+    'Set next turn
     Private Sub nextTurn()
 
         Dim rollsLeftInt As Integer = gameObj.rollsLeftValue
@@ -180,11 +187,15 @@ Public Class YatzyForm
 
     End Sub
 
+    'Event when submit button is clicked in forced yatzy
     Private Sub submitBtn_Click(sender As Object, e As EventArgs) Handles submitBtn.Click
         gameObj.forcedChoose()
+        Dim rollsLeftInt As Integer = gameObj.rollsLeftValue
+        rollsLeft.Text = rollsLeftInt
         submitBtn.Enabled = False
     End Sub
 
+    'Event for highscore button is clicked
     Private Sub HighScoreBtn_Click(sender As Object, e As EventArgs) Handles HighScoreBtn.Click
         Dim highScoreForm As New Highscore()
         highScoreForm.ShowDialog(Me)
